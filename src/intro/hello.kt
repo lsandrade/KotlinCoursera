@@ -19,8 +19,22 @@ fun main(args: Array<String>) {
 
     val maxValue = max(10, 20)
     println("Maior: $maxValue")
+
+    println(listOf('a', 'b', 'c').joinToString(separator = ",", prefix = "(", postfix = ")"))
+
+    displaySeparator()
+
+    displaySeparator('a', 5)
+
+    displaySeparator(size = 7, character = 'b')
 }
 
 fun max (a: Int, b: Int): Int {
     return if(a>b) a else b
+}
+
+fun displaySeparator(character: Char = '*', size: Int = 10) {
+    repeat(size) {
+        print(character)
+    }
 }
