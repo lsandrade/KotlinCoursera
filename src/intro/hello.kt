@@ -16,4 +16,11 @@ fun main(args: Array<String>) {
     // can
     val list2 = mutableListOf("Java")
     list2.add("Kotlin")
+
+    val maxValue = max(10, 20)
+    println("Maior: $maxValue")
+}
+
+fun max (a: Int, b: Int): Int {
+    return if(a>b) a else b
 }
