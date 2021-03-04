@@ -47,15 +47,14 @@ fun main(args: Array<String>) {
 }
 
 fun isValidIdentifier(s: String): Boolean {
-    if (s == "")
-        return false
 
-    if (!s[0].isLetter() && s[0]!= '_')
-        return false
+    fun isValidChar(ch: Char) =
+        ch.isLetterOrDigit() || ch == '_'
+
+    if (s.isEmpty() || s[0].isDigit()) return false
 
     for (c in s) {
-        if (!c.isLetterOrDigit() && c != '_')
-            return false
+        if (!isValidChar(c)) return false
     }
 
     return true
