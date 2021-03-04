@@ -27,6 +27,8 @@ fun main(args: Array<String>) {
     displaySeparator('a', 5)
 
     displaySeparator(size = 7, character = 'b')
+
+    println(getDescription(Color.BLUE))
 }
 
 fun max (a: Int, b: Int): Int {
@@ -38,3 +40,15 @@ fun displaySeparator(character: Char = '*', size: Int = 10) {
         print(character)
     }
 }
+
+enum class Color {
+    BLUE, ORANGE, RED
+}
+
+fun getDescription(color: Color): String =
+    when(color) {
+        Color.BLUE -> "cold"
+        Color.ORANGE -> "mild"
+        Color.RED -> "hot"
+        else -> "I don't know"
+    }
