@@ -1,5 +1,7 @@
 package intro
 
+import javax.print.attribute.IntegerSyntax
+
 fun main(args: Array<String>) {
     val name = if(args.isNotEmpty()) args[0] else "kotlin"
     println("Hello, $name!")
@@ -29,6 +31,12 @@ fun main(args: Array<String>) {
     displaySeparator(size = 7, character = 'b')
 
     println(getDescription(Color.BLUE))
+
+    helloWorldWithFor()
+
+    forWithIndex(listOf("A", "B", "C"))
+
+    countTo(11)
 }
 
 fun max (a: Int, b: Int): Int {
@@ -52,3 +60,21 @@ fun getDescription(color: Color): String =
         Color.RED -> "hot"
         else -> "I don't know"
     }
+
+fun helloWorldWithFor() {
+    for (s in "Hello World") {
+        println(s)
+    }
+}
+
+fun forWithIndex(list: List<String>) {
+    for ((index, element) in list.withIndex()) {
+        println("$index: $element")
+    }
+}
+
+fun countTo(j: Int) {
+    for (i in 1..j) {
+        print(i)
+    }
+}
