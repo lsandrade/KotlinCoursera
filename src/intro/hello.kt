@@ -37,6 +37,28 @@ fun main(args: Array<String>) {
     forWithIndex(listOf("A", "B", "C"))
 
     countTo(11)
+
+    println(isValidIdentifier("name") == true)   // true
+    println(isValidIdentifier("_name") == true)  // true
+    println(isValidIdentifier("_12") == true)    // true
+    println(isValidIdentifier("") == false)       // false
+    println(isValidIdentifier("012") == false)    // false
+    println(isValidIdentifier("no$") == false)    // false
+}
+
+fun isValidIdentifier(s: String): Boolean {
+    if (s == "")
+        return false
+
+    if (!s[0].isLetter() && s[0]!= '_')
+        return false
+
+    for (c in s) {
+        if (!c.isLetterOrDigit() && c != '_')
+            return false
+    }
+
+    return true
 }
 
 fun max (a: Int, b: Int): Int {
