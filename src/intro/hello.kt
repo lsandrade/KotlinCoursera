@@ -46,6 +46,29 @@ fun main(args: Array<String>) {
     println(isValidIdentifier("no$") == false)    // false
 
     println("Last char".lastChar())
+
+    val sum = sum(listOf(1, 2, 3))
+    println(sum)    // 6
+
+    val sum2 = listOf(1, 2, 3).sum2()
+    println(sum == sum2)
+
+}
+
+fun sum(list: List<Int>): Int {
+    var result = 0
+    for (i in list) {
+        result += i
+    }
+    return result
+}
+
+fun List<Int>.sum2(): Int {
+    var result = 0
+    this.listIterator().forEach {
+        result += it
+    }
+    return result
 }
 
 fun isValidIdentifier(s: String): Boolean {
