@@ -44,6 +44,8 @@ fun main(args: Array<String>) {
     println(isValidIdentifier("") == false)       // false
     println(isValidIdentifier("012") == false)    // false
     println(isValidIdentifier("no$") == false)    // false
+
+    println("Last char".lastChar())
 }
 
 fun isValidIdentifier(s: String): Boolean {
@@ -99,3 +101,5 @@ fun countTo(j: Int) {
         print(i)
     }
 }
+
+fun String.lastChar() = get(length -1)
