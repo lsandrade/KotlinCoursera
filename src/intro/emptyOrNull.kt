@@ -12,4 +12,4 @@ fun main(args: Array<String>) {
 
 private infix fun Boolean.eq(b: Boolean) = this == b
 
-private fun String?.isEmptyOrNull(): Boolean = this == "" || this == null
+private fun String?.isEmptyOrNull(): Boolean = this in listOf("", null)
