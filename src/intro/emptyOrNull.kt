@@ -10,6 +10,6 @@ fun main(args: Array<String>) {
     println(s3.isEmptyOrNull() eq false)
 }
 
-private infix fun Boolean.eq(b: Boolean) = this == b
+infix fun Boolean.eq(b: Boolean) = this == b
 
 private fun String?.isEmptyOrNull(): Boolean = this in listOf("", null)
